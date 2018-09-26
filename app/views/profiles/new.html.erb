@@ -1,4 +1,4 @@
-<label for="email">email</label>
+<!-- <label for="email">email</label>
 <input type="text" name="email" id="email" class="fancy_form" >
 
 <label for="username">username</label>
@@ -14,4 +14,16 @@
 <input type="text" name="address" id="address" class="fancy_form" >
 
 <label for="alias">alias</label>
-<input type="text" name="alias" id="alias" class="fancy_form" >
+<input type="text" name="alias" id="alias" class="fancy_form" > -->
+
+
+<% def my_input(*item_name) %>
+  <% item_name.each do |name| %>
+    <label for="<%= name %>">  <%= name %> </label>
+    <input type="text" name="<%= name %>" id="<%= name %>" class="fancy_form" >
+  <% end %>
+<% end %>
+
+
+<% my_input("email", "username", "pin", "website", "address", "alias") %>
+<% puts "\n" %>
